@@ -19,4 +19,4 @@ deployment:
     commands:
       - docker images --all
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push ${CIRCLE_USERNAME}/elasticsearch:1.5.2
+      - docker push ${CIRCLE_USERNAME}/logstash:1.5.0
