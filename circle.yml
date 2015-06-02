@@ -17,6 +17,4 @@ deployment:
   hub:
     branch: master
     commands:
-      - docker images --all
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push ${DOCKER_USER}/logstash
+      - "curl -H \"Content-Type: application/json\" --data '{\"build\": true}' -X POST ${BUILD_HOOK}"
