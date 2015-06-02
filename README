@@ -1,4 +1,4 @@
-# Elasticsearch
+# Logstash
 
 Docker image inheritance:
  * shift/java:8
