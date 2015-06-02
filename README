@@ -1,0 +1,36 @@
+# Elasticsearch
+
+Docker image inheritance:
+ * shift/java:8
+ * shift/ubuntu:15.04
+ * ubuntu:15.04
+
+## Volumes
+
+Logstashes configuration directory is `/srv/logstash/config`
+
+## Ports
+
+Exposed ports:
+ * 9292/tcp
+
+## Example usage
+
+```
+docker run -d \
+  --name logstash \
+  -e LOGSTASH_TRACE=true \
+  -p 9292:9292 \
+  -e LOGSTASH_CONFIG_URL=http://example.com/my-logstash.conf \
+  --link elasticsearch:elasticsearch \
+  shift/logstash:1.5.0 agent
+```
+
+The container takes the following:
+
+ * agent - Start the logstash agent.
+ * configtest - Tests the configuration file is valid.
+ * shell - Gives a Bash shell.
+
+Make sure to use ELASTICSEARCH_HOST and ELASTICSEARCH_PORT if using a `--link`
+to Elasticsearch.
