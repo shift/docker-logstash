@@ -25,3 +25,4 @@ ADD files/start.sh /start.sh
 ENTRYPOINT ["/start.sh"]
 
 EXPOSE 9292
+EXPOSE 5425
